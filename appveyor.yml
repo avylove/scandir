@@ -19,7 +19,7 @@ environment:
 
 install:
   - IF "%PY_26%"=="1" (
-        pip install --disable-pip-version-check --user unittest2 wheel
+        pip install --disable-pip-version-check unittest2 wheel
     ) ELSE (
         %PYTHON%\\python.exe -m pip install wheel
     )
@@ -31,6 +31,9 @@ build_script:
 
 test_script:
   - "%PYTHON%\\python.exe test/run_tests.py"
+
+before_test:
+  - IF "%PY_26%"=="1" ( pip install --disable-pip-version-check unittest2 )
 
 after_test:
   - "build.cmd %PYTHON%\\python.exe setup.py bdist_wheel"
