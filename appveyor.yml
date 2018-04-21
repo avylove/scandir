@@ -19,7 +19,8 @@ environment:
 
 install:
   - IF "%PY_26%"=="1" (
-        %PYTHON%\\python.exe -m pip.__main__ --trusted-host pypi.python.org install unittest2 wheel
+        %PYTHON%\\python.exe -m pip.__main__ install --upgrade pip
+        %PYTHON%\\python.exe -m pip.__main__ install unittest2 wheel
     ) ELSE (
         %PYTHON%\\python.exe -m pip install wheel
     )
