@@ -19,7 +19,7 @@ environment:
 
 install:
   - IF "%PY_26%"=="1" (
-        %PYTHON%\\python.exe -c "import pip._vendor.requests.packages.urllib3 as urllib3; urllib3.disable_warnings(); pip.main()" install --disable-pip-version-check unittest2 wheel
+        %PYTHON%\\python.exe -c "import pip._vendor.requests.packages.urllib3 as urllib3; import pip; urllib3.disable_warnings(); pip.main()" install --disable-pip-version-check unittest2 wheel
     )
 
 build: off
