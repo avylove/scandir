@@ -1,13 +1,13 @@
 environment:
   matrix:
-    - PYTHON: "C:\\Python266"
+    - PYTHON: "C:\\Python26"
       PY_26: "1"
     - PYTHON: "C:\\Python27"
     - PYTHON: "C:\\Python33"
     - PYTHON: "C:\\Python34"
     - PYTHON: "C:\\Python35"
     - PYTHON: "C:\\Python36"
-    - PYTHON: "C:\\Python266-x64"
+    - PYTHON: "C:\\Python26-x64"
       PY_26: "1"
     - PYTHON: "C:\\Python27-x64"
     - PYTHON: "C:\\Python33-x64"
@@ -19,7 +19,8 @@ environment:
 
 install:
   - IF "%PY_26%"=="1" (
-        %PYTHON%\\python.exe -m pip.main install wheel unittest2
+        %PYTHON%\\python.exe -m pip.__main__ --trusted-host pypi.python.org install ndg-httpsclient ; [void] 'foo';
+        %PYTHON%\\python.exe -m pip.__main__ --trusted-host pypi.python.org install unittest2
     ) ELSE (
         %PYTHON%\\python.exe -m pip install wheel
     )
