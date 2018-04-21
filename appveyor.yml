@@ -19,9 +19,9 @@ environment:
 
 install:
   - IF "%PY_26%"=="1" (
-        %PYTHON%\\python.exe -m pip.__main__ install --disable-pip-version-check pyopenssl ndg-httpsclient pyasn1
+        %PYTHON%\\python.exe -m pip.__main__ install --disable-pip-version-check --trusted-host pypi.python.org unittest2
         &&
-        %PYTHON%\\python.exe -m pip.__main__ install --disable-pip-version-check unittest2 wheel
+        %PYTHON%\\python.exe -m pip.__main__ install --disable-pip-version-check wheel
     ) ELSE (
         %PYTHON%\\python.exe -m pip install wheel
     )
