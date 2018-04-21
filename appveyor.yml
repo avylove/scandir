@@ -19,9 +19,7 @@ environment:
 
 install:
   - IF "%PY_26%"=="1" (
-        %PYTHON%\\python.exe -m pip.__main__ --trusted-host pypi.python.org install ndg-httpsclient ; [void] 'foo';
-        &&
-        %PYTHON%\\python.exe -m pip.__main__ --trusted-host pypi.python.org install unittest2
+        %PYTHON%\\python.exe -m pip.__main__ --trusted-host pypi.python.org install --index-url http://pypi.python.org/simple unittest2
     ) ELSE (
         %PYTHON%\\python.exe -m pip install wheel
     )
