@@ -19,9 +19,9 @@ environment:
 
 install:
   - IF "%PY_26%"=="1" (
-        "%PYTHON%\\python.exe -m pip.main install wheel unittest2"
+        %PYTHON%\\python.exe -m pip.main install wheel unittest2
     ) ELSE (
-        "%PYTHON%\\python.exe -m pip install wheel"
+        %PYTHON%\\python.exe -m pip install wheel
     )
 
 build: off
