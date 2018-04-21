@@ -1,14 +1,14 @@
 environment:
   matrix:
     - PYTHON: "C:\\Python26"
-      PIP_MAIN: "1"
+      PY_26: "1"
     - PYTHON: "C:\\Python27"
     - PYTHON: "C:\\Python33"
     - PYTHON: "C:\\Python34"
     - PYTHON: "C:\\Python35"
     - PYTHON: "C:\\Python36"
     - PYTHON: "C:\\Python26-x64"
-      PIP_MAIN: "1"
+      PY_26: "1"
     - PYTHON: "C:\\Python27-x64"
     - PYTHON: "C:\\Python33-x64"
       DISTUTILS_USE_SDK: "1"
@@ -18,8 +18,8 @@ environment:
     - PYTHON: "C:\\Python36-x64"
 
 install:
-  - IF "%PIP_MAIN%"=="1" (
-        %PYTHON%\\python.exe -m pip.__main__ install wheel
+  - IF "%PY_26%"=="1" (
+        %PYTHON%\\python.exe -m pip.__main__ install unittest2 wheel
     ) ELSE (
         %PYTHON%\\python.exe -m pip install wheel
     )
